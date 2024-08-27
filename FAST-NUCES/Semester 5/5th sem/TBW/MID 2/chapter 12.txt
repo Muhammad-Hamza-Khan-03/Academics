@@ -1,0 +1,78 @@
+Chapter 12:
+Proposal: A document written to convince your readers to adopt or support an idea, a product, or a service. It can be directed to colleagues inside your own organization (in-house proposals), to clients outside your organization (sales propos- als), or to organizations that fund research and other activi- ties (grant proposals). 
+Proposal Guideline 1: Plan Well Before You Write
+Proposal Guideline 2: Make Text Visually Appealing
+Proposal Guideline 3: Edit Carefully
+Unsolicited proposal :A document submitted without a request to convince your readers to adopt an idea, a product, or a ser- vice. Unsolicited proposals are usually written as informal documents and often addressed to internal audiences
+ABC Format:
+ ABSTRACT: Gives a summary or “big picture” for those who make decisions about your proposal.
+• The need—a problem to be solved or situation to be improved
+• Summary of the solution
+■ BODY: Gives the details about exactly what you
+are proposing to do. 
+■ CONCLUSION: Drives home the main benefit and makes clear the next step.
+
+Solicited proposal: A document requested by the reader to help the reader solve a problem through the purchase of a product or a service. Solicited proposals are usually written as formal documents and addressed to external audiences.
+
+Request for proposal (RFP): A document sometimes sent out by an organization that wants to receive proposals for a prod- uct or service. The RFP gives guidelines on (1) what the pro- posal should cover, (2) when it should be submitted, and (3) to whom it should be sent. As writer, you should follow the RFP guidelines diligently in planning and drafting your proposal.
+ABC Format:
+■ ABSTRACT: Overview of the scope and desired outcomes
+• Scope of the proposal
+• Restatement of the situation or problem
+• Summary of proposing organization’s qualifications
+• Benefits of the proposal
+• Overview of the general organization of the
+proposal
+■ BODY: Details of the proposed plan, product, or service
+• Summary of the current situation
+• Background information and data as appropriate
+• Technical information
+• Management information
+• Cost information
+• (Appendixes—appear after text, but support body section)
+■ CONCLUSION:
+• Benefits of accepting the proposal
+• Unique qualifications of the proposing organization
+ 
+Grant proposal: A document written to convince your readers to support a specific project that meets the needs of a social or professional community. Directed to organizations that fund research and other activities, grant proposals help grant- ing organization meet their goals for improving communities. These communities may be local, or they may be global. Grant proposals may seek to improve social conditions, or they may seek support for research to add to knowledge in a profession or to improve the quality of life for many people through im- provements in specific bodies of knowledge.
+Grant proposals are often written as formal documents in response to specific requests for proposal or standing grant programs. Some organizations, such as universities or government agencies, may also have internal programs that provide grants to improve services to constituents.
+
+ABC Format: Grant Proposal
+■ ABSTRACT: Overview of the project
+• Statement of need
+• Mission of your organization
+• Explanation of how the proposed program will meet the goals of the granting organization
+■ BODY: Details of the proposal
+• Background information about your organization
+• Detailed explanation of the situation, including data and other supporting research
+• Objectives to be used to evaluate the success of the proposed program
+• Importance of proposal to the community
+• How results will be shared (for research grants) • Budget
+■ CONCLUSION: Importance of the project
+• Summary of community needs to be met
+• How community needs fit the granting organiza- tion goals
+• Main reason why your organization is best suited to meet the community need.
+
+White paper: A document designed to educate industry customers or to help readers solve a problem, usually not longer than 15 pages. White papers are objective in tone but persuasive in purpose, created to build customer trust and loyalty. In style and format, they usually resemble articles in trade journals or academic papers.
+White Paper Guideline 1: Know Your Audience
+As with all technical communication, it is important to know who your readers are. The audience for most of the documents that we discuss in this book is a mixed audience of technical experts, business experts, and nonexperts. White papers may have a narrower audience. A white paper that describes a new pollution-control device for diesel engines may be written primarily for automotive engineers.
+>> White Paper Guideline 2: Include the Problem and Solution in the Title
+Readers usually order white papers from a Web site. Thus, they may be scanning a list of white paper titles to find what they need. Provide the key information in your title.
+>> White Paper Guideline 3: Use Analogies and Metaphors to Explain New Concepts
+Because white papers introduce new processes, or mechanisms, it may be useful to in- clude metaphors and analogies familiar to readers to Metaphors or analogies should use concepts that are familiar to the reader to explain the innovation described in the paper.
+>> White Paper Guideline 4: Use Graphic Elements to Provide Information
+Illustrations, charts, and graphs can help readers understand the new ideas presented in white papers. (See Chapter 13 for information about creating effective graphics.) White papers should also include headings, marginal notes, and other elements to guide the readers to the information that they want. Because most white papers are made available as PDFs, readers may print them, so any illustrations should be clear when printed in black and white.
+White Paper Guideline 5: Cite Sources Correctly
+White papers often include information from published articles. Your white paper should consistently follow a citation format, such as those published by the APA or the CSE. (See Appendix A.) White papers include in-text citations as well as bibliographies. If your organization has a style guide, follow the recommended citation format.
+
+ABSTRACT: Definition of the Problem
+BODY: Organization that moves from general information about the solution to your specific product or service
+• Historical/background overview to set stage for new technology
+• Evidence, data, and information from published sources
+• Criteria for solution, followed by your solution
+• Brief mention of product or service or perhaps no
+mention at all
+CONCLUSION: Summary of the problem and solution
+• Review of the problem
+• Benefits of the solution, including your product
+or service if it is specifically mentioned • Bibliography

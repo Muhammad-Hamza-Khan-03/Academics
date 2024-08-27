@@ -1,0 +1,137 @@
+function getSLParameterByName(name, validation) {
+    var url = window.location.href;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)', 'i');
+    var results = regex.exec(url);
+    if (!results) return ""
+    if (!results[2]) return "";
+    var result = decodeURIComponent(results[2].replace(/\+/g, ' '));
+    if (result && result != "null" && name === "CID" && validation && !result.includes(validation)) {
+        result = "";
+    }
+    return result;
+};
+
+function setSLCookie(cname, cvalue) {
+    var d = new Date();
+    if (cvalue && cvalue != "null")
+        d.setDate(d.getDate() + 30);
+    else
+        d.setTime(d.getTime() - (1 * 24 * 60 * 60 * 1000));
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+};
+
+function getSLCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ')
+            c = c.substring(1);
+        if (c.indexOf(name) == 0)
+            return c.substring(name.length, c.length);
+    }
+    return null;
+};
+
+function clearSLCookies() {
+    setSLCookie("sl-track-purchase", "");
+    setSLCookie("sl-promo-code", "");
+    setSLCookie("sl-shop-code", "");
+    setSLCookie("sltrackid", "");
+};
+
+function getSLGuid(id) {
+    var clear = true;
+    var url = "https://socialladder.rkiapps.com/SocialLadderAPI/api/v1/campaign/processinvitetobuy?sltrackid=" + id;
+    try {
+        var request = createCORSRequest("GET", url);
+        if (request) {
+            // Define a callback function
+            request.onload = function () {
+                if (request.status === 200) {
+                    if (request.responseText) {
+                        var data = JSON.parse(request.responseText);
+                        if (data) {
+                            clear = false;
+                            setSLCookie("sl-track-purchase", data.InviteToBuyGUID);
+                            setSLCookie("sl-promo-code", data.DiscountCode);
+                            setSLCookie("sl-shop-code", data.PixelTrackCode);
+                        }
+                    }
+                }
+            };
+            // Send request
+            request.send();
+        }
+    } finally {
+        //if (clear)
+        //    clearSLCookies();
+    }
+};
+
+function createCORSRequest(method, url) {
+    var xhr = new XMLHttpRequest();
+    if ("withCredentials" in xhr) {
+        // XHR has 'withCredentials' property only if it supports CORS
+        xhr.open(method, url, true);
+    } else if (typeof XDomainRequest != "undefined") { // if IE use XDR
+        xhr = new XDomainRequest();
+        xhr.open(method, url);
+    } else {
+        xhr = null;
+    }
+    return xhr;
+};
+
+var sltrackid = getSLCookie("sltrackid");
+var para = getSLParameterByName("ambassadorID");
+if (!para || para == "null") {
+    para = getSLParameterByName("CID", "aff_SL_");
+    if (para && para != "null") {
+        para = para.replace("aff_SL_", "");
+    }
+}
+var slGuid = getSLCookie("sl-track-purchase");
+var createCookie = false;
+if (sltrackid && sltrackid != "null") {
+    if (para && para != "null") {
+        createCookie = true;
+    }
+}
+else if (!slGuid || slGuid == "null")
+    createCookie = true;
+else
+    createCookie = true;
+
+if (createCookie && (para && para != "null")) {
+    setSLCookie("sltrackid", para);
+    getSLGuid(getSLCookie("sltrackid"));
+}
+
+function SLCheckout(ordernum, price, quantity, promocode, email, currency = "", udf = "") {
+    var slcguid = getSLCookie("sl-track-purchase");
+    var shopcode = getSLCookie("sl-shop-code");
+    if (slcguid && slcguid != "null") {
+        var source = `https://socialladder.rkiapps.com/socialladderapi/api/v1/campaign/track?Action=SALE&UDF1=${ordernum}&UDF2=${price}&UDF3=${shopcode}&UDF4=${quantity}&UDF5=${promocode}&UDF7=${email}&ITBGUID=${slcguid}&UDF14=${currency}&UDF9=${udf}`;
+        document.getElementById("slPixel").src = source;
+    }
+};
+
+function loadSLImage() { };
+
+function slCookiesExists() {
+    var slGuid = getSLCookie("sl-track-purchase");
+    if (slGuid && slGuid != "null")
+        return true;
+    return false;
+};
+
+function getSLDiscountCode() {
+    var slCode = getSLCookie("sl-promo-code");
+    if (slCode && slCode != "null")
+        return slCode;
+    return "";
+};

@@ -1,0 +1,311 @@
+#include <iostream>
+
+using namespace std;
+
+template<class T>
+class AVL{
+	class node{
+	public:
+		T data;
+		node* child[2];
+
+		node(T _data) {
+			data = _data;
+			child[0] = nullptr;
+			child[1] = nullptr;
+		}
+	};
+
+	node* root;
+
+	T max(T a, T b)
+	{
+		if (a > b)
+			return a;
+		return b;
+	}
+
+	node* ll_rotate(node* a)
+	{
+		node* b = a->child[1];
+
+		a->child[1] = b->child[0];
+
+		b->child[0] = a;
+
+		return b;
+	}
+
+	node* rr_rotate(node* c)
+	{
+		node* b = c->child[0];
+
+		c->child[0] = b->child[1];
+
+		b->child[1] = c;
+
+		return b;
+	}
+
+	node* lr_rotate(node* c)
+	{
+		node* a = c->child[0];
+		node* b = a->child[1];
+
+		c->child[0] = ll_rotate(a);
+
+		return rr_rotate(c);
+	}
+
+	node* rl_rotate(node* a)
+	{
+		node* c = a->child[1];
+		node* b = c->child[0];
+
+		a->child[1] = rr_rotate(c);
+
+		return ll_rotate(a);
+	}
+
+	void insert(T data, node* &crr, node* parent)
+	{
+		if (crr == nullptr)
+			crr = new node(data);
+		else
+			insert(data, crr->child[data >= crr->data], crr);
+
+		int bf = balanceFactor(crr);
+		int cBf;
+
+		if (bf == -2)
+		{	
+			cBf = balanceFactor(crr->child[1]);
+			if (cBf == -1)
+			{
+				node* newChild = ll_rotate(crr);
+				if (parent)
+					parent->child[crr == parent->child[1]] = newChild;
+				else
+					root = newChild;
+			}
+			else if (cBf == 1)
+			{
+				node* newChild = rl_rotate(crr);
+				if (parent)
+					parent->child[crr == parent->child[1]] = newChild;
+				else
+					root = newChild;
+			}
+		}
+		else if (bf == 2)
+		{
+			cBf = balanceFactor(crr->child[0]);
+			if (cBf == 1)
+			{
+				node* newChild = rr_rotate(crr);
+				if (parent)
+					parent->child[crr == parent->child[1]] = newChild;
+				else
+					root = newChild;
+			}
+			else if (cBf == -1)
+			{
+				node* newChild = lr_rotate(crr);
+				if (parent)
+					parent->child[crr == parent->child[1]] = newChild;
+				else
+					root = newChild;
+			}
+		}
+	}
+
+	bool search(T data, node* crr)
+	{
+		if (crr == nullptr)
+			return false;
+		else if (crr->data == data)
+			return true;
+		else
+			return search(data, crr->child[data >= crr->data]);
+	}
+
+	int height(node* crr = nullptr)
+	{
+		if (crr == nullptr)
+			return -1;
+		else
+			return max(height(crr->child[0]), height(crr->child[1])) + 1;
+	}
+
+	int balanceFactor(node* crr)
+	{
+		if (crr)
+			return height(crr->child[0]) - height(crr->child[1]);
+		return 0;
+	}
+
+	void printTree(ostream& out, node* crr, int count = 0){
+		if (crr)
+		{
+			printTree(out, crr->child[1], count + 1);
+
+			for (int i = 0; i < count; i++)
+				out << '\t';
+			out << crr->data << endl;
+
+			printTree(out, crr->child[0], count + 1);
+		}
+	}
+
+	void printInorder(node* crr, int count = 0){
+		if (crr)
+		{
+			printInorder(crr->child[0], count + 1);
+
+			cout << crr->data << ' ';
+
+			printInorder(crr->child[1], count + 1);
+		}
+	}
+
+	void printPreorder(node* crr, int count = 0){
+		if (crr)
+		{
+			cout << crr->data << ' ';
+
+			printPreorder(crr->child[0], count + 1);
+
+			printPreorder(crr->child[1], count + 1);
+		}
+	}
+
+
+	void printPostorder(node* crr, int count = 0){
+		if (crr)
+		{
+			printPostorder(crr->child[0], count + 1);
+
+			printPostorder(crr->child[1], count + 1);
+
+			cout << crr->data << ' ';
+		}
+	}
+
+	void isAVL(bool &isavl, node* crr = nullptr)
+	{
+		if (crr)
+		{
+			if (balanceFactor(crr) >= 2 || balanceFactor(crr) <= -2)
+				isavl = false;
+			isAVL(isavl, crr->child[0]);
+			isAVL(isavl, crr->child[1]);
+		}
+	}
+
+	T find2ndMin(node* crr)
+	{
+		if (crr->child[0]->child[0] == nullptr)
+			return crr->data;
+		return find2ndMin(crr->child[0]);
+	}
+
+	T findMin(node* crr)
+	{
+		if (crr->child[0] == nullptr)
+			return crr->data;
+		return findMin(crr->child[0]);
+	}
+public:
+	AVL(){ root = nullptr; }
+
+	void insert(T data)
+	{
+		insert(data, root, nullptr);
+	}
+
+	bool search(T data)
+	{
+		return search(data, root);
+	}
+
+	void printPreorder(){
+		printPreorder(root);
+		cout << endl;
+	}
+
+	void printPostorder(){
+		printPostorder(root);
+		cout << endl;
+	}
+
+	void printInorder(){
+		printInorder(root);
+		cout << endl;
+	}
+
+	bool isAVL()
+	{
+		bool isavl = true;
+		isAVL(isavl, root);
+		return isavl;
+	}
+
+	T findMin()
+	{
+		if (root == nullptr)
+			return 0;
+		return findMin(root);
+	}
+
+	T find2ndMin()
+	{
+		if (root == nullptr)
+			return 0;
+		else if (root->child[0] == nullptr)
+			return root->data;
+		return find2ndMin(root);
+	}
+
+	template<class D>
+	friend ostream& operator<<(ostream& out, AVL<D> tree)
+	{
+		tree.printTree(out, tree.root, 0);
+		return out;
+	}
+};
+
+int main()
+{
+	AVL<int> tree;
+
+	tree.insert(1);
+	tree.insert(2);	// c
+	tree.insert(3);
+	tree.insert(4);		// a
+	tree.insert(5);
+	tree.insert(6);
+	tree.insert(7);
+	tree.insert(8);
+	tree.insert(9);	// b
+	tree.insert(10);
+
+	cout << tree << endl;
+	cout << "----------------------------------\n";
+	tree.printPreorder();
+	cout << "----------------------------------\n";
+	tree.printInorder();
+	cout << "----------------------------------\n";
+	tree.printPostorder();
+	cout << "----------------------------------\n";
+	cout << tree.search(19) << endl;
+	cout << "----------------------------------\n";
+	cout << tree.isAVL() << endl;
+	cout << "----------------------------------\n";
+	cout << tree.findMin() << endl;
+	cout << "----------------------------------\n";
+	cout << tree.find2ndMin() << endl;
+	cout << "----------------------------------\n";
+
+	system("pause");
+	return 0;
+}

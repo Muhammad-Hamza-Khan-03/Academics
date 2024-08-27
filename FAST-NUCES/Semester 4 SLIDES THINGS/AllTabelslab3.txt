@@ -1,0 +1,222 @@
+create database lab3;
+
+create table salesman(
+salesman_id int,
+salesman_name varchar(13),
+city varchar(13),
+commision float
+);
+
+insert into salesman 
+values (5001,'James Hoog','New York',0.15);
+insert into salesman 
+values (5002,'Nail knite','Paris',0.13);
+insert into salesman 
+values (5005,'Pit Alex','London',0.11);
+insert into salesman 
+values (5006,'Mc Lyon','Paris',0.14);
+insert into salesman 
+values (5007,'Paul Adam','San Jose',0.13);
+insert into salesman 
+values (5003,'Lauson Hen',Null,0.12);
+--alter table salesman
+--add primary key(salesman_id);
+
+create table orders(
+ord_no int,
+purch_amt float,
+ord_date date,
+customer_id int,
+salesman int
+);
+insert into orders
+values(70001,150.5,'2012-10-05',3005,5002);
+insert into orders
+values(70009,270.65,'2011-09-10',3001,5005);
+insert into orders
+values(70002,65.26,'2014-10-05',3002,5001);
+insert into orders
+values(70004,110.5,'2011-08-17',3009,5003);
+insert into orders
+values(70007,948.5,'2012-09-10',3005,5002);
+insert into orders
+values(70005,2400.6,'2010-07-27',3007,5001);
+insert into orders
+values(70008,5760,'2013-09-10',3002,5001);
+insert into orders
+values(70010,1983.43,'2010-10-10',3004,5006);
+insert into orders
+values(70003,2480.4,'2013-10-10',3009,5003);
+insert into orders
+values(70012,250.45,'2010-06-27',3008,5002);
+insert into orders
+values(70011,75.29,'2014-08-17',3003,5007);
+insert into orders
+values(70013,3045.6,'2010-04-25',3002,5001);
+
+create table customers(
+customer_id int,
+cust_name varchar(13),
+city varchar(13),
+grade int,
+salesman_id int
+);
+
+insert into customers
+values(3002,'Nick Rimando','New York',100,5001);
+insert into customers
+values(3007,'John Brad Davis','New York',200,5001);
+insert into customers
+values(3005,'Graham Zusi','California',200,5002);
+insert into customers
+values(3008,'Julian Green','London',300,5002);
+insert into customers
+values(3004,'Fabian Johnson','Paris',300,5006);
+insert into customers
+values(3009,'Geoff Cameron','Berlin',100,5003);
+insert into customers
+values(3003,'Jozy Altidor','Moscow',200,5007);
+insert into customers
+values(3001,'NJohn Brad Guzan','London',NULL,5005);
+-----------------------------------------------------------
+
+create database lab3;
+
+create table salesman(
+salesman_id int,
+name varchar(13),
+city varchar(13),
+commision float
+);
+
+insert into salesman 
+values (5001,'James Hoog','New York',0.15);
+insert into salesman 
+values (5002,'Nail knite','Paris',0.13);
+insert into salesman 
+values (5005,'Pit Alex','London',0.11);
+insert into salesman 
+values (5006,'Mc Lyon','Paris',0.14);
+insert into salesman 
+values (5007,'Paul Adam','San Jose',0.13);
+insert into salesman 
+values (5003,'Lauson Hen',Null,0.12);
+--alter table salesman
+--add primary key(salesman_id);
+
+create table orders(
+ord_no int,
+purch_amt float,
+ord_date date,
+customer_id int,
+salesman int
+);
+insert into orders
+values(70001,150.5,'2012-10-05',3005,5002);
+insert into orders
+values(70009,270.65,'2011-09-10',3001,5005);
+insert into orders
+values(70002,65.26,'2014-10-05',3002,5001);
+insert into orders
+values(70004,110.5,'2011-08-17',3009,5003);
+insert into orders
+values(70007,948.5,'2012-09-10',3005,5002);
+insert into orders
+values(70005,2400.6,'2010-07-27',3007,5001);
+insert into orders
+values(70008,5760,'2013-09-10',3002,5001);
+insert into orders
+values(70010,1983.43,'2010-10-10',3004,5006);
+insert into orders
+values(70003,2480.4,'2013-10-10',3009,5003);
+insert into orders
+values(70012,250.45,'2010-06-27',3008,5002);
+insert into orders
+values(70011,75.29,'2014-08-17',3003,5007);
+insert into orders
+values(70013,3045.6,'2010-04-25',3002,5001);
+
+create table customers(
+customer_id int,
+cust_name varchar(13),
+city varchar(13),
+grade int,
+salesman_id int
+);
+
+insert into customers
+values(3002,'Nick Rimando','New York',100,5001);
+insert into customers
+values(3007,'John Brad Davis','New York',200,5001);
+insert into customers
+values(3005,'Graham Zusi','California',200,5002);
+insert into customers
+values(3008,'Julian Green','London',300,5002);
+insert into customers
+values(3004,'Fabian Johnson','Paris',300,5006);
+insert into customers
+values(3009,'Geoff Cameron','Berlin',100,5003);
+insert into customers
+values(3003,'Jozy Altidor','Moscow',200,5007);
+insert into customers
+values(3001,'NJohn Brad Guzan','London',NULL,5005);
+
+
+-------------------Question 1 -----------------------------
+SELECT * FROM customers 
+WHERE city = 'New York' 
+ORDER BY cust_name ASC;
+
+-------------------Question 2---------------------------------
+
+SELECT * FROM customers
+WHERE cust_name LIKE '%John%' AND city IN ('London', 'Paris', 'NewYork');
+
+----------------------Question 3 -------------------------------
+
+SELECT * FROM customers
+WHERE city = 'London' or city = 'New York';
+--
+---------------------------Question 4------------------------------
+
+Select * from orders
+where purch_amt >500;
+
+----------------------------Question 5----------------------------
+
+SELECT * FROM salesman
+WHERE SUBSTRING(name, 2, 1) = 'a';
+
+-------------------------------------Question 6--------------------
+
+update salesman
+set commision=commision+0.5
+where city = 'San Jose';
+
+------------------------------------------Question 7---------------
+
+SELECT * FROM orders  
+ORDER BY ord_date DESC;
+--
+--------------------------------------Question 8-----------------
+
+----------alter table salesman
+---Rename to firstname;
+
+-------------------------------------Question 9----------------------
+
+SELECT * FROM orders
+WHERE MONTH(ord_date) = 1;
+
+--------------------------------------Question 10-------------------
+
+SELECT YEAR(ord_date) AS year,
+       WEEK(ord_date) AS week,
+       DAYOFYEAR(ord_date) AS dayofyear,
+       MONTH(ord_date) AS month,
+       DAY(ord_date) AS day,
+       WEEKDAY(ord_date) AS weekday
+FROM orders
+WHERE MONTH(ord_date) = 10;
+
+

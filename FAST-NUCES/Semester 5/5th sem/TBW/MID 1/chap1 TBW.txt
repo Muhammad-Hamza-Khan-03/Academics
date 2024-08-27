@@ -1,0 +1,104 @@
+
+>Academic writing:
+-Reader knows more about the subject
+-when readers job is to evaluate work of writer (captive audience) e.g class Teacher
+
+>Technical writing:
+-You should write to make reader understand the topic.
+-Reader may not know more about subject
+
+>workplace communtication
+
+>Writing in Organization:
+-Based on writing for clear comm,effective action and neccessary record keeping 
+-Accurate writing ,concise
+-Employees audience:
+ --supervisors,Collegues,Subordinates,Clients,contractors etc
+Def:
+■ Technical communication aims to help people make decisions and perform tasks. 
+■ Technical communication responds to the needs of the workplace. 
+■ Technical communication is created by an informed writer conveying information 
+both verbally and visually to a reader who needs the information. 
+■ Technical communication is read by readers who have specific questions to answer or 
+tasks to accomplish. 
+■ Technical communication emphasizes techniques of organization and visual cues that 
+help readers find important information as quickly as possible. 
+
+>Culture in Organizations:
+
+DEF->Organizational culture: The main features of life at a particular organization. An organization’s culture is influenced by the firm’s history, type of business, management style, values, attitude toward customers, and attitude toward its own employees. Taken together, all features of a particular organization’s culture create a definable quality of life within the working world of that organization. 
+
+Writing directly influences the following: 
+■ Your performance evaluations 
+■ Your professional reputation 
+■ Your organization’s productivity and success in the marketplace
+-Culture depends on: 	Management style(style of leadership,herarical,),
+			Buissness type(Flexible,traditional,non traditional,innovative culture but some have formal culture)
+			Organisation History(traditional measures for 100 year old steel firm and enterpreurial spirit for just developed comapanys)
+
+>Buissness Climate(political,economic factors that influence buissness priorities.These also include->(Compition,investor interests,regulations))
+
+DEF->Business climate: The economic and political factors that influence an organization’s priorities, plans, and activities. These factors include competition, investor interests, regulations, and the overall health of the economy. 
+
+-Company focus on:
+	1.quality(quick response to customers, encourage employee input/interests) 
+	2.efficency(reduce costs and improve production wrt time)
+global busissness climate:
+	parctices done:
+		1.Outsourcing:
+				parctice of purchasing goods from an outside company (suppliers that may be in diff countries or same country)
+		2.Offshoring:
+				When company moves some of its operations outside the country for reducing labour cost and increasing work effeciency
+
+>Cultures in Global buissness:
+-varies from country to country
+-in china ,good wraping of gifts
+-in germany , be punctual etc
+-High context cultures:(Homogeneous)
+	High-context cultures are fairly  homogeneous, with the culture providing a high degree of context for communication.  Thus, communications may be less explicit
+	when people are linked by religion,ethnic groups,family they can understand situation by a few words.
+high-context cultures include 
+■ Clear distinctions between insiders and outsiders 
+■ A focus on maintaining relationships, on saving face, and on helping others save face 
+■ A dependence on internalized cultural norms to govern behavior
+-Low context Cultures:
+	consist of diverse religions, ethnic backgrounds, and educational levels; as a result, communication must be explicit, because members of a group cannot assume that they share knowledge or attitudes
+■ Openness to outsiders 
+■ A focus on actions and solving problems, with a willingness to disagree openly 
+■ A dependence on formally established rules to govern behavior
+PG : 10 Table
+Following are some basic guidelines to reduce the risk of 
+misunderstanding: 
+ 1. Simplify grammar and style rules. It is best to write in clear language with relatively simple syntax and short sentences—so that ideas cannot be  misunderstood. 
+ 2. Use simple verb tenses and verb constructions. For example, constructions like gerunds and the progressive can have multiple meanings, and some languages don’t have an equivalent to the passive voice. 
+ 3. Limit vocabulary to words with clear meanings. Compound words or phrases used as subjects of sentences can be confusing and difficult to translate. The European Association of Aerospace Industries (AECMA) identifies a list of approved words. AECMA’s guidelines can be found at http://www.techscribe.co.uk/ta/aecma-simplified-english.pdf . 
+ 4. Use language and terminology consistently. Texts are easier to read 
+and translate if they follow this rule: “one meaning per word and one word 
+per meaning.” 
+ 5. Define technical terms. All good technical writing includes well-defined terminology, but this feature is especially important in international writing. A glossary 
+remains an effective tool for helping international readers. 
+ 6. Avoid slang terms and idioms. A nonnative speaker or someone from outside 
+the United States may be unfamiliar with phrases you use every day. The ever-popular 
+sports metaphors such as “ballpark estimate,” “hitting a home run,” and “let’s punt 
+on this” present obvious obstacles for some readers. Use phrasing that requires little 
+cultural context. 
+ 7. Include visuals. Graphics are a universal language that allows readers entry into 
+the meaning of your document, even if they have difficulty with the text. 
+PG 16 has types and questions (imp)
+
+>Ethics:
+1.Be Hosnest
+2.Be Fair
+3.Be professional
+4.Honor intellectual Property rights
+5.Respect Confidentiality
+6.Do not harm
+
+>M global:
+fictinal company having:
+1.Real-world context
+2.Continuity
+Legal issues in writing + M global is left
+1.list all sources other than common knowledge
+2.seek permissions before borrowing text or visuals
+3.Seek legal advice when cant solve complex questions

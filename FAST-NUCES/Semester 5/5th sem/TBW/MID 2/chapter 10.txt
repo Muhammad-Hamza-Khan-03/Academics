@@ -1,0 +1,63 @@
+Chapter 10:
+->Informal report:(short/more substance than simple letter, internal ?memo : letter
+-narrow focus
+-few readers,to one
+-written by team to 1
+-2 to 5 pages
+-use headings and may include appendix
+
+->Formal docs:
+-address complex probs
+-written by team
+-atleast 6 pages
+-for external audience
+use headings/subheading + front and back material like appendix,contents,title page
+
+->Informal use hoti when we are focussed and the topic is short and  Sales proposal for asbestos removal,Proposal for training project, Environmental study ,Seafloor study
+->Memo internal corresondance in company like equpiment demand etc
+
+Format: INFORMAL DOCS:
+1.plan
+2.letter or memo
+3.text visual appealing(bullets,highlight)
+4.ABC format
+5.Abstract as INTRO summary
+	1. Purpose for the document—Why are you writing it? 
+ 2. Scope statement—What range of information does the document contain? 
+ 3. Summary of essentials—What main information does the reader most want or 
+need to know?
+6.put imp details(general to specific,subheading in lead passage)
+7.Seperate facts from opinion(findings,conclusion,recommend)
+8.Focus attention in conclusion
+9.Use attachments for less imp details(tables,costs)
+10.edit carefully(short sentences,dihaan se likho
+
+When to Use FORMAL DOCS
+ Salary study and recommendations (internal)
+■ Analysis of marketing problems (internal):
+■ Collapse of oil rig (external):
+■ Sales proposal for work on wind turbine project (external): 
+
+Strategy for oranizing formal docs:
+Principle 1: Write different parts for different 
+readers. 
+Principle 2: Place important information first. 
+Principle 3: Repeat key points when necessary. 
+
+Table of Contents Guidelines 
+■ Make it very readable 
+■ Use the contents page to reveal document 
+emphases 
+■ Consider leaving out low-level headings 
+■ List appendixes 
+■ Use parallel form in all entries 
+■ Proofread carefully
+Executive Summary 
+Guidelines 
+■ Put it on one page 
+■ Avoid technical jargon 
+■ Include only the important conclusions 
+and recommendations 
+■ Avoid references to the document body 
+■ Use paragraph format 
+■ Write the executive summary last

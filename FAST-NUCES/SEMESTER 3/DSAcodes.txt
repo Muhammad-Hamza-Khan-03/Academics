@@ -1,0 +1,1135 @@
+////////////Linked list
+//#include<iostream>
+//using namespace std;
+//
+//class Linked_List;
+//class Node
+//{
+//public:
+//	friend class Linked_List;
+//	int data;
+//	Node* next;
+//};
+//class Linked_List
+//{
+//	Node* head;
+//public:
+//	Linked_List()
+//	{
+//		head = nullptr;
+//	}
+//	bool InsertFromStart(int val)
+//	{
+//		Node* temp = new Node;
+//		temp->data = val;
+//		temp->next = head;
+//		head = temp;
+//		return 1;
+//	}
+//	bool DeleteFromStart()
+//	{
+//		if (head == nullptr)
+//		{
+//			return 0;
+//		}
+//		else
+//		{
+//			Node* curr = head;
+//			head = curr->next;
+//
+//			delete[]curr;
+//			curr = nullptr;
+//			return 1;
+//		}
+//	}
+//	bool InsertAtEnd(int val)
+//	{
+//		Node* temp = new Node;
+//		temp->data = val;
+//		temp->next = nullptr;
+//		Node* prev = 0;
+//		Node* curr = head;
+//
+//		while (curr != nullptr)
+//		{
+//			prev = curr;
+//			curr = curr->next;
+//		}
+//		if (prev == 0)
+//		{
+//			head = temp;
+//			return 1;
+//		}
+//		else
+//		{
+//			prev->next=temp;
+//			return 1;
+//		}
+//	}
+//	bool DeleteAtEnd()
+//	{
+//		Node* curr = head;
+//		Node* last = 0;
+//		Node* secondlast = 0;
+//		if (curr == nullptr)
+//		{
+//			return 0;
+//		}
+//		while (curr != nullptr)
+//		{
+//			secondlast = last;
+//			last = curr;
+//			curr = curr->next;
+//		}
+//		if (secondlast == nullptr)
+//		{
+//			head = NULL;
+//			delete last;
+//			last = 0;
+//			cout << "Sirf aik dabba\n";
+//			return 1;
+//		}
+//		else
+//		{
+//			secondlast->next = NULL;
+//			delete last;
+//			last = 0;
+//			cout << "last block detected\n";
+//			return 1;
+//		}
+//	}
+//	void Display()
+//	{
+//		Node* curr = head;
+//		while (curr != nullptr)
+//		{
+//			cout << "Your list is :"<<curr->data<<endl;
+//			curr = curr ->next;
+//		}
+//	}
+//	bool Insert_sorted(const T val)
+//	{
+//		Node* n = head;
+//		Node* follow_cur = nullptr;
+//		Node* temp = new Node;
+//		temp->data = val;
+//
+//		while (n != nullptr && n->data < temp->data)//traversing
+//		{
+//			follow_cur = n;
+//			n = n->next;
+//		}
+//		if (follow_cur == nullptr)//NO element
+//		{
+//			temp->next = n;
+//			head = temp;
+//			
+//		}
+//		else
+//		{
+//			follow_cur->next = temp;
+//			temp->next = n;
+//		}
+//		
+//		cout << "Sorted\n";
+//		return 1;
+//	}
+//	~Linked_List()
+//	{
+//		Node* curr;
+//		while (head != nullptr)
+//		{
+//			curr = head;
+//			head = curr->next;
+//			delete curr;
+//		}
+//		curr = 0;
+//		delete head;
+//		if (head == nullptr)
+//		{
+//			cout << "Linked List is deleted\n";
+//		}
+//	}
+//	bool Search(int key)
+//	{
+//		Node* temp=head;
+//		while (temp != nullptr)
+//		{
+//			if (temp->data == key)
+//				return 1;
+//			temp = temp->next;
+//			
+//		}
+//		
+//	}
+//};
+////////////////////////////////////////////////////////////
+/////DLL
+#include <iostream>
+using namespace std;
+
+
+template<typename t>
+class DLL
+{
+	class Node//class Node 
+	{
+		T data;
+		friend DLL;
+		Node* next, * prev;
+	};//end of class Node
+	Node* head;//head pointer
+public:
+	DLL()//constructor to declare nullptr in head
+	{
+		head = nullptr;
+	}
+
+	bool InsertAtTail(T const element)
+	{
+		Node* curr = new Node;
+		curr->data = element;
+
+		if (head == nullptr)
+		{
+			InsertAtStart(element);
+			cout << "head does not point anywhere\n";
+			return 0;
+		}
+		Node* temp;
+		temp = head;
+
+		while (temp->next != nullptr)
+		{
+			temp = temp->next;
+		}
+		temp->next = curr;
+		curr->prev = temp;
+		curr->next = head;
+		return 1;
+
+	}
+	bool InsertAtStart(T const val)//
+	{
+		Node* curr = new Node;
+		curr->prev = nullptr;
+		curr->next = head;
+		curr->data = val;
+
+		if (head == nullptr)
+		{
+			curr->next = curr;
+		}
+		else
+		{
+			Node* temp = head;
+
+			while (temp->next != head)//if the head is not empty
+			{
+				temp = temp->next;
+			}
+			temp->next = curr;
+
+			curr->next = head;
+		}
+		head = curr;//update head
+		return 1;
+	}
+	bool DeleteAtStart()const
+	{
+		Node* temp = head;
+		Node* curr = head;
+		head = head->next;//move head to next node
+		while (curr->next != head)
+		{
+			curr = curr->next;
+		}
+		if(head!=NULL)
+		head->prev = curr;//so that head becomes first node
+
+		delete temp;
+		temp = 0;
+		return 1;
+	}
+	
+	void Display()
+	{
+		Node* temp = nullptr;
+		temp = head;
+		cout << "The data is:";
+		while (temp->next != head)
+		{
+			cout << temp->data << "->";
+			temp = temp->next;
+		}
+		cout << endl;
+	}
+};
+int main()
+{
+	DLL<int> d1;
+	d1.InsertAtStart(5);
+
+	d1.Display();
+	d1.DeleteAtStart();
+	d1.Display();
+	system("pause");
+	return 0;
+}
+////////////////////////////////////////////////////////////
+// Stack 
+
+#include <iostream>
+
+using namespace std;
+
+
+class Node
+{
+    friend class Stack;
+    int data;
+    Node* next;
+};
+class Stack {
+    int maxsize;
+    Node* head;
+
+public:
+    Stack()
+    {
+        head = NULL;
+        maxsize = 0;
+    }
+    //time complexity of constructor is O(1)
+    bool Insert(int val)
+    {
+        Node* temp = new Node;         //O(1)
+        temp->data = val;              //O(1)
+        temp->next = head;             //O(1)
+        head = temp;                   //O(1)
+        maxsize++;//stack cant overflow because it is in linked list    //O(1)
+        cout << "Value is inserted\n";      //O(1)
+        return 1;                         //O(1)
+    }
+    //time complexity = O(1)
+    int size()
+    {
+        return maxsize;                     //O(1)
+    }
+    //time complexity is O(1)
+    void pop()
+    {
+        if (head == NULL) {                   //O(1)
+            cout << "The stack is empty\n";   //O(1)
+            return;                         //O(1)
+        }
+        Node* curr = head;                   //O(1)
+
+        head = head->next;                  //O(1)
+
+        delete curr;                        //O(1)
+        maxsize--;                          //O(1)
+        cout << "Element popped from the list\n";//O(1)
+    }
+    //time complexity is O(1)
+    bool top(const int& x)
+    {
+        if (head == NULL)                      //O(1)
+        {
+            Insert(x);                      //O(1)
+            return false;                   //O(1)
+        }
+        Insert(x);
+        cout << "The element on top is: " << head->data << endl;   //O(1)
+        return head->data;                                   //O(1)
+
+    }
+    //time complexity is O(1)
+    bool IsEmpty()
+    {
+        if (maxsize == 0)//O(1)
+            return true;//O(1)
+        else
+            return false;//O(1)
+    }
+    //time complexity = O(1)
+    bool delete_middle()
+    {
+        int mid = maxsize / 2;     //O(1)
+        int ctr = 0;             //O(1)
+        if (head == NULL)          //O(1)
+        {
+            return 0;             //O(1)
+        }
+        Node* curr = head;         //O(1)
+        while (curr != nullptr)       //O(n+1)
+        {
+            if (ctr == mid)         //O(n)
+            {
+                Node* temp = curr;   //O(n)
+                curr = curr->next;      //O(n)
+                delete temp;            //O(n)
+                maxsize--;              //O(n)
+                cout << "Mid element deleted\n";//O(n)
+                return 1;
+            }
+            curr = curr->next; //O(n)
+            ctr++;             //O(n)
+        }
+        cout << "No mid found\n";//O(1)
+        return 1;
+    }
+    //time complexity = O(n)
+    bool find_sum_k(int key)
+    {
+        Node* curr = head;//O(1)
+        Node* prev = NULL;//O(1)
+        while (curr != NULL)//O(n)
+        {
+            if ((prev != NULL) && (curr->data + prev->data == key)) {//O(1)
+                cout << "The two elements are: " << curr->data << " and " << prev->data << endl;//O(1)
+                return 1;
+            }
+            else
+                prev = curr;//O(1)
+            curr = curr->next;//O(1)
+        }
+        if (prev == NULL)//O(1)
+        {
+            cout << "One box found only\n";//O(1)
+            return 1;//O(1)
+        }
+        cout << "no elements have sum equal to k\n";//O(1)
+        return 0;
+    }
+    //Time complexity = O(n)
+/*    Stack sort_stack()
+    {
+            Stack tempo;
+            Node* curr = head;
+
+            if(tempo.head == NULL)
+                tempo.head = head;
+
+            Node* curr_tempo = tempo.head;
+            while(curr!=nullptr)
+            {
+                if(curr->data < curr_tempo->data)
+                {
+                    tempo.Insert(curr->data);
+                }
+                curr = curr->next;
+                curr_tempo = curr_tempo->next;
+            }
+            Node* a = tempo.head;
+            while(a!=nullptr)
+            cout<<a->data<<endl;
+
+            return tempo;
+    }*/
+};
+int main()
+{
+    Stack s1;
+    s1.Insert(1);
+    s1.Insert(4);
+    s1.Insert(1);
+    s1.Insert(4);
+    cout << "size: " << s1.size() << endl;
+    s1.find_sum_k(9);
+    s1.delete_middle();
+    cout << "size: " << s1.size() << endl;
+    s1.pop();
+    s1.IsEmpty();
+    s1.top(1);
+    return 0;
+}
+//////////////////////////////////////////////////////////////////////////////////////
+//Queue
+#include <iostream>
+
+using namespace std;
+
+class Node
+{
+    friend class Que;
+    int data;
+    Node* next;
+};
+class Que {
+private:
+    Node* front;
+    Node* rear;
+    int maxsize;
+public:
+    Que()
+    {
+        front = NULL;
+        rear = NULL;
+        maxsize = 0;
+    }
+    //time complexity of constructor is O(1)
+    int size()
+    {
+        return maxsize;
+    }
+    //time complexity of size() is O(1)
+    bool isEmpty()
+    {
+        if (maxsize == 0)
+            return true;
+        else
+            return false;
+    }
+    //time complexity of isEmpty is O(1)
+    void Enqueue(const int& val)
+    {
+        Node* temp = new Node;
+        temp->data = val;
+
+        if (rear == NULL)
+        {
+            front = temp;
+            rear = temp;
+        }
+        else
+        {
+            rear->next = temp;
+            rear = temp;
+            rear->next = front;//the rear pointer points to head keeping circular linked list
+        }
+        maxsize++;
+        cout << "The new value has been enqueue\n";
+    }
+    //time complexity of Enqueue is O(1)
+    void Dequeue()
+    {
+        if (front == NULL)
+        {
+            cout << "Front is empty\n";
+            return;
+        }
+        else if (front == rear)
+        {
+            front = NULL;
+            rear = NULL;
+            cout << "There was one element and it is removed\n";
+        }
+        else
+        {
+            Node* temp = front;
+
+            front = front->next;//moving front to next node
+
+            rear->next = front;//keeping queue circular
+
+            delete temp;//deleting the first node in list
+        }
+        maxsize--;//decrementing size;
+        cout << "Element deleted\n";
+    }
+    //time complexity of dequeue is O(1)
+    bool front_func(const int& x)
+    {
+        if (isEmpty())
+        {
+            Enqueue(x);
+            return false;
+        }
+        else
+        {
+            Enqueue(x);
+            return true;
+        }
+        return 1;
+    }
+    //time complexity of front_func is O(1)
+};
+int main()
+{
+    Que q1;
+    q1.Enqueue(5);
+    q1.Enqueue(6);
+    cout << "size: " << q1.size() << endl;
+    q1.Dequeue();
+    q1.front_func(4);
+    return 0;
+}
+/////////////////////////////////////////////////////////////
+//Bst 
+#include<iostream>
+using namespace std;
+
+class BST;
+class TreeNode
+{
+	friend class BST;
+	int data;
+	TreeNode* left,* right;
+};
+class node
+{
+	friend class LL;
+	int data;
+	node* next;
+};
+class LL
+{
+	node* head;
+public:
+	LL()
+	{
+		head = nullptr;
+	}
+
+	bool insertathead(int val)
+	{
+
+		node* temp = new node;
+		temp->data = val;
+		temp->next = head;
+		head = temp;
+		return 1;
+	}
+	bool InsertAtEnd(int val)
+	{
+		node* temp = new node;
+		temp->data = val;
+		temp->next = nullptr;
+		node* prev = 0;
+		node* curr = head;
+	
+		while (curr != nullptr)
+		{
+			prev = curr;
+			curr = curr->next;
+		}
+		if (prev == 0)
+		{
+			head = temp;
+			return 1;
+		}
+		else
+		{
+			prev->next=temp;
+			return 1;
+		}
+	}
+	
+	void print()
+	{
+		node* curr = head;
+		while (curr->next != 0)
+		{
+			cout << curr->data << " ";
+			curr = curr->next;
+		}
+	}
+
+};
+class BST
+{
+	LL linkedlist;
+	TreeNode* root;
+	int length;
+	int index;
+	bool insert(TreeNode*& T, int k)
+	{
+		if (T == 0)
+		{
+			T = new TreeNode;
+			T->data = k;
+			T->right = nullptr;
+			T->left = nullptr;
+			length = length + 1;
+			return true;
+		}
+
+		else if (T->data > k)
+		{
+			insert(T->left, k);
+		}
+		else if (T->data < k)
+		{
+			insert(T->right, k);
+		}
+		else if (T->data == k)
+			return false;
+	}
+	void LevelOrderPrint(TreeNode* t){
+	if (t == 0)
+		return;
+	linkedlist.insertathead(t->data);
+	TreeNode* r = t->right;
+	TreeNode* l = t->left;
+
+	while (r != 0 && l != 0)
+	{
+		linkedlist.InsertAtEnd(l->data);
+		linkedlist.InsertAtEnd(r->data);
+		if (l->right != 0)
+		{
+			linkedlist.InsertAtEnd(l->right->data);
+		}
+		if (r->left != 0)
+		{
+			linkedlist.InsertAtEnd(r->left->data);
+		}
+		r = r->right;
+		l = l->left;
+	}
+	while (l != 0)
+	{
+		linkedlist.InsertAtEnd(l->data);
+		if (l->right != 0)
+		{
+			linkedlist.InsertAtEnd(l->right->data);
+		}
+		l = l->left;
+	}
+	while (r != 0)
+	{
+		linkedlist.InsertAtEnd(r->data);
+		if (r->left != 0)
+		{
+			linkedlist.InsertAtEnd(r->left->data);
+		}
+		r = r->right;
+	}
+	linkedlist.print();
+}
+
+	int height(TreeNode* T)
+	{
+		if (T == 0)
+			return 0;
+		int ln = height(T->left);//we are traversing tree from left and right and we are storing counts of left of Treenode in ln and right of treenode in rn
+		int rn = height(T->right);
+		
+		ln = ln + 1;
+		rn = rn + 1;
+
+		if (ln > rn)//we check if left side is greater than we copy right side else we will copy left side
+			return (ln);
+		else
+			return (rn);
+	}
+	int kthsmallest(TreeNode* t, int k)
+	{
+		if (t == 0)
+			return 0;
+		if (index != k)
+		{
+			index++;
+			kthsmallest(t->left,k);
+			kthsmallest(t->right,k);
+		}
+		else
+		{
+			return t->data;
+		}
+	}
+	void inOrder(TreeNode* t)
+	{
+		if (t != 0)
+		{
+			inOrder(t->left);
+			cout << t->data << " ";
+			inOrder(t->right);
+		}
+	}
+	int kthlargest(TreeNode* t, int k)
+	{
+		if (t == 0)
+			return 0;
+		if (index != length-k)
+		{
+			index++;
+			kthlargest(t->left, k);
+			kthlargest(t->right, k);
+		}
+		else
+		{
+			return t->data;
+		}
+	}
+public:
+	BST()
+	{
+		root = nullptr;//the root of BST
+		length=0;//used to calculate number of nodes
+		index = 0;//used in minimum and maximum
+	}
+	bool insert(int k)//inserting value in BST
+	{
+		return insert(root, k);
+	}
+	bool _delete(int k)
+	{
+		return remove(k);
+	}
+	void LevelOrderPrint()
+	{
+		LevelOrderPrint(root);
+	}
+	void inorder()
+	{
+		inOrder(root);
+	}
+	bool remove(int val)
+	{
+		TreeNode* curr = root, * parent = 0;
+		while (curr != 0 && curr->data != val)
+		{
+			parent = curr;
+			if (val < curr->data)
+				curr = curr->left;
+			else
+				curr = curr->right;
+		}
+		if (curr == 0)
+			return false;
+		else
+		{
+			if (curr->left != 0 && curr->right != 0)
+			{
+				TreeNode* l = curr->left, * pl = curr;
+				while (l->right != 0)
+				{
+					pl = l;
+					l = l->right;
+				}
+				curr->data = l->data;
+				curr = l;
+				parent = pl;
+			}
+			TreeNode* temp = 0;
+			if (curr->left != 0)
+			{
+				temp = curr->left;
+			}
+			else
+			{
+				temp = curr->right;
+			}
+			if (curr == root)
+			{
+				root = temp;
+			}
+			else
+			{
+				if (curr == parent->left)
+					parent->left = temp;
+				else
+					parent->right = temp;
+			}
+			delete curr;
+			curr = 0;
+			return true;
+		}
+	}
+	int height()
+	{
+		return height(root);
+	}
+	int leng()const
+	{
+		return length;
+	}
+	int kthsmallest(int k)
+	{
+		return kthsmallest(root, k-1);
+	}
+	int kthlargest(int k)
+	{
+		index = 0;
+		return kthlargest(root, k);
+	}
+};
+int main()
+{
+	BST bst;
+	bst.insert(1);
+	bst.insert(3);
+	bst.insert(2);
+	bst.insert(5);
+	bst.insert(4);
+	bst.insert(7);
+	bst.insert(6);
+	bst.insert(8); 
+	bst.insert(9); 
+	bst.insert(10); 
+	cout << endl;
+	
+	cout << "Binary search tree values: ";
+	bst.inorder();
+
+	cout<<"\n\nHeight of bst: "<<bst.height();
+	cout << "\nLength of bst:" << bst.leng();
+	cout << "\nKth smallest on value 3: " << bst.kthsmallest(1)<<endl;
+	cout << "\nKth largest on  value 3: " << bst.kthlargest(3);
+	
+	cout << "\nlevelwise printing:";
+	bst.LevelOrderPrint();//I used linked list to implement this part
+	bst.inorder();
+	cout << endl << "on deleting 7 from bst: "<<endl;
+	bst._delete(7);
+	cout << "Final bst:" << endl;
+	bst.LevelOrderPrint();
+}
+//////////////////////////////////////////////////////////
+#include<iostream>
+#include<List>
+#include<stack>
+using namespace std;
+class Graph
+{
+	int v; // No. of vertices
+	list<int>* adj; // adjacency lists
+public:
+
+	Graph(int n) // Constructor
+	{
+		v = n;
+		
+		adj = new list<int>[v];
+	}
+	void TakeInput(int vertex, int input)
+	{
+		adj[vertex].push_back(input);
+	}
+	void ExploreFunction(int start)
+	{
+		bool* visited = new bool[v];
+		for (int i = 0; i < v; i++)
+		{
+			visited[i] = false;
+		}
+		for (int i = start; i < v; i++)
+			if (visited[i] == false )
+					DFS(start, visited);
+	}
+	void DFS(int vertex, bool*&visited)// print the paths from start to every other vertex as generated by the DFS method.One path per line.
+	{
+		stack<int> val;
+		val.push(vertex);
+
+		while (val.empty()==false)
+		{  
+			vertex = val.top();
+			val.pop();
+			if (visited[vertex]==false)
+			{
+				visited[vertex] = true;
+				cout << vertex<<"  ";
+			}
+
+			for (auto i = adj[vertex].begin(); i != adj[vertex].end(); i++)
+				if (visited[*i] == false) {
+					val.push(*i);
+				}
+		}
+
+	}
+	void Print()
+	{
+		bool* visited = new bool[v];
+		for (int i = 0; i < v; i++)
+		{
+			visited[i] = false;
+		}
+		for (int i = 0; i < v; i++)
+			if (visited[i]==false)
+				DFS(i, visited);
+	}
+	~Graph()
+	{
+		delete[] adj;
+		adj = 0;
+	}
+};
+
+int main()
+{
+	Graph g(4); // Total 4 vertices in graph
+	g.TakeInput(0, 1);
+	g.TakeInput(0, 2);
+	g.TakeInput(1, 2);
+	g.TakeInput(2, 0);
+	g.TakeInput(2, 3);
+	g.TakeInput(3, 3);
+	//g.Print();
+	g.ExploreFunction(1);
+}
+// Chaining in C++ STL without
+// the use of pointers
+  
+#include <bits/stdc++.h>
+	// C++ Program to implement Separate
+using namespace std;
+  
+// Container for our data-set
+class SeperateHash {
+  
+    // Data members are kept private
+    // since they are accessed using methods
+private:
+    int n;
+    vector<vector<int> > v;
+  
+    // Methods are kept public
+public:
+    // Initialising constructors as the
+    // minimum required memory will be
+    // allocated after which compiler
+    // will not report flag error
+    SeperateHash(int n)
+    {
+        // Constructor to initialize
+        // the vector of vectors
+        v = vector<vector<int> >(n);
+  
+        // Here, we will allocate
+        // memory of the unnamed_memory
+        // to the object. This snippet
+        // of code won't work for now.
+        // Program will work whenever
+        // constructor gets initialized
+        this->n = n;
+    }
+  
+    int getHashIndex(int x)
+    {
+        return x % n;
+    }
+  
+    void add(int x)
+    {
+        // Adding the element according
+        // to hash index
+        v[getHashIndex(x)].push_back(x);
+    }
+  
+    void del(int x)
+    {
+        int i = getHashIndex(x);
+  
+        // Scan for the element to be removed
+        for (int j = 0; j < v[i].size(); j++) {
+  
+            // Erase if present otherwise
+            // print no element found!
+            if (v[i][j] == x) {
+                v[i].erase(v[i].begin() + j);
+                cout << x << " deleted!" << endl;
+                return;
+            }
+        }
+  
+        cout << "No Element Found!" << endl;
+    }
+    void displayHash()
+    {
+        // Display the contents
+        for (int i = 0; i < v.size(); i++) {
+            cout << i;
+            for (int j = 0; j < v[i].size(); j++)
+                cout << " -> " << v[i][j];
+            cout << endl;
+        }
+    }
+};
+  
+// Driver Code
+int main()
+{
+    // Array to be used
+    int arr[] = { 12, 3, 23, 4, 11,
+                  32, 26, 33, 17, 19 };
+  
+    // Sending the size
+    // for separate chaining
+    SeperateHash obj(10);
+  
+    // Inserting elements in
+    // the container accordingly
+    for (int i = 0; i < 10; i++)
+        obj.add(arr[i]);
+  
+    // Display the initial hash
+    cout << "Initial Hash:\n";
+    obj.displayHash();
+  
+    // Removing the element
+    // from the container
+    cout << "\nRemoving 23 from Hash: ";
+    obj.del(23);
+    cout << endl;
+  
+    // Display the final hash
+    cout << "Final Hash:\n";
+    obj.displayHash();
+    return 0;
+}
+// Adjacency Matrix representation in C++
+
+#include <iostream>
+using namespace std;
+
+class Graph {
+   private:
+  bool** adjMatrix;
+  int numVertices;
+
+   public:
+  // Initialize the matrix to zero
+  Graph(int numVertices) {
+    this->numVertices = numVertices;
+    adjMatrix = new bool*[numVertices];
+    for (int i = 0; i < numVertices; i++) {
+      adjMatrix[i] = new bool[numVertices];
+      for (int j = 0; j < numVertices; j++)
+        adjMatrix[i][j] = false;
+    }
+  }
+
+  // Add edges
+  void addEdge(int i, int j) {
+    adjMatrix[i][j] = true;
+    adjMatrix[j][i] = true;
+  }
+
+  // Remove edges
+  void removeEdge(int i, int j) {
+    adjMatrix[i][j] = false;
+    adjMatrix[j][i] = false;
+  }
+
+  // Print the martix
+  void toString() {
+    for (int i = 0; i < numVertices; i++) {
+      cout << i << " : ";
+      for (int j = 0; j < numVertices; j++)
+        cout << adjMatrix[i][j] << " ";
+      cout << "\n";
+    }
+  }
+
+  ~Graph() {
+    for (int i = 0; i < numVertices; i++)
+      delete[] adjMatrix[i];
+    delete[] adjMatrix;
+  }
+};
+
+int main() {
+  Graph g(4);
+
+  g.addEdge(0, 1);
+  g.addEdge(0, 2);
+  g.addEdge(1, 2);
+  g.addEdge(2, 0);
+  g.addEdge(2, 3);
+
+  g.toString();
+}

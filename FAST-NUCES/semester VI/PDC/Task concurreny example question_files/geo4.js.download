@@ -1,0 +1,17 @@
+(function(){
+  window['optimizely'] = window['optimizely'] || [];
+  window['optimizely'].push(['activateGeoDelayedExperiments', {
+    'location':{
+      'city': "ISLAMABAD",
+      'continent': "AS",
+      'country': "PK",
+      'region': "",
+      'dma': ""
+    },
+    'ip':"116.71.188.149"
+  }]);
+})
+//
+()
+
+;
