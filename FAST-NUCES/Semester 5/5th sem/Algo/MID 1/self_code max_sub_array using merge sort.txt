@@ -1,0 +1,75 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int max(int a,int b)
+{
+    if(a>b)
+        return a;
+    return b;
+}
+int max(int a, int b, int c) {
+    return max(max(a, b), c);
+}
+int MaxCrossingSum(int arr[],int l,int m,int r)
+{
+    int sum=0;
+    int cl=-10000;
+    for(int i=m;i>l;i--)
+    {
+        sum+=arr[i];
+        cl=max(cl,sum);
+    }
+    sum=0;
+    int rl=-10000;
+    for (int j=m+1;j<r;j++)
+    {
+        sum+=arr[j];
+        rl=max(sum,rl);
+        
+    }   
+    return (rl+cl);
+}
+int maxSubArraySum(int arr[],int l,int r)
+{
+    if(l>r)
+    return INT_MIN;
+    if(l==r)
+    return arr[l];
+    
+    int m = (l+r)/2;
+    
+    int left = maxSubArraySum(arr,l,m);
+    int right = maxSubArraySum(arr,m+1,r);
+    int crossing=MaxCrossingSum(arr,l,m,r);
+    //return 1;
+     //return max(maxSubArraySum(arr, l, m - 1),
+     //          maxSubArraySum(arr, m + 1, h),
+     //          maxCrossingSum(arr, l, m, h));
+    return max(max(max(left,right),max(left,crossing)),max(right,crossing));
+}
+/*Driver program to test maxSubArraySum*/
+int main() {
+	int arr[] = {3,-5,1,5,-4,5,-6,7,-2 };
+	int n = sizeof(arr) / sizeof(arr[0]);
+	int max_sum =maxSubArraySum(arr, 0, n - 1);
+
+	cout << "Maximum contiguous sum is " << max_sum;
+	return 0;
+}
+
