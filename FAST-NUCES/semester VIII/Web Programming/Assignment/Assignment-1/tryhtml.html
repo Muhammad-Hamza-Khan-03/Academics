@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalist Baker</title>
+   <link rel="stylesheet" href="try-css.css">
+</head>
+<body>
+    <div class="site-container">
+        <!-- First Navigation Bar -->
+        <div class="firstnav">
+            <div class="wrap">
+                <div class="firstNav-inner">
+                    <div class="firstNav-search">
+                        <form class="search-form" role="search">
+                            <label>
+                                <input type="search" class="search-field" placeholder="search minimalist baker" name="s">
+                            </label>
+                            <button class="search-submit" type="submit">
+                                <svg class="svg-icon" width="16" height="16" viewBox="0 0 29 32">
+                                    <path d="M28.4501243,12.4 C28.4444806,18.6921406 23.342143,23.7900024 17.05,23.79 C15.5266386,23.8233305 14.0186342,23.4798216 12.66,22.79 L5,30.56 C4.41199697,31.0967002 3.65517844,31.4114519 2.86,31.45 C2.10217663,31.4281398 1.38353748,31.1083454 0.86,30.56 C-0.257531922,29.3984916 -0.257531922,27.5615084 0.86,26.4 L8,19.22 C5.00152809,15.2629568 4.91442496,9.81873792 7.78477557,5.7677983 C10.6551262,1.71685869 15.8203741,-0.0057325508 20.5476637,1.51142193 C25.2749532,3.02857642 28.4730951,7.43527534 28.4501243,12.4 Z M24,12.4 C24,8.57818953 20.9018105,5.48 17.08,5.48 C13.2581895,5.48 10.16,8.57818953 10.16,12.4 C10.16,16.2218104 13.2581896,19.3199999 17.08,19.3199999 C20.9018104,19.3199999 24,16.2218104 24,12.4 L24,12.4 Z"></path>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Social Icons -->
+                    <div class="social-icons-bar">
+                        <ul class="social-icons">
+                            <li>
+                                <a href="#" target="_blank">
+                                    <svg class="svg-icon" width="16" height="16" viewBox="0 0 24 24">
+                                        <path d="m13.6651845 22h-4.44419739v-9.4441974h-2.22098711v-3.6382837h2.22098711v-2.18430414c0-2.96687416 1.25389059-4.73321476 4.81547349-4.73321476h2.9668742v3.63939529h-1.8530458c-1.3872832 0-1.4795464.50911516-1.4795464 1.45731436l-.0055581 1.82080925h3.3592708l-.3935082 3.6382837h-2.9657626z"></path>
+                                    </svg>
+                                    <span class="label">Facebook</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">
+                                    <svg class="svg-icon" width="16" height="16" viewBox="0 0 24 24">
+                                        <path d="m15.9795893 2c3.3197138 0 6.0204107 2.63061431 6.0204107 5.86397331v8.27205339c0 3.2334194-2.7006969 5.8639733-6.0204107 5.8639733h-7.95911661c-3.3197138 0-6.02047269-2.6305539-6.02047269-5.8639733v-8.27205339c0-3.233359 2.70075889-5.86397331 6.02047269-5.86397331zm3.8464114 14.1360267v-8.27205339c0-2.06579404-1.7254849-3.74642572-3.8464114-3.74642572h-7.95911661c-2.12092654 0-3.84641138 1.68063168-3.84641138 3.74642572v8.27205339c0 2.065794 1.72548484 3.7464257 3.84641138 3.7464257h7.95911661c2.1209265 0 3.8464114-1.6806317 3.8464114-3.7464257z"></path>
+                                    </svg>
+                                    <span class="label">Instagram</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">
+                                    <svg class="svg-icon" width="16" height="16" viewBox="0 0 24 24">
+                                        <path d="m10.7636728 15.2276266c-.5559411 2.7526724-1.23411875 5.3925111-3.24279389 6.7723734-.62058542-4.1619185.91089715-7.2871772 1.62198461-10.6051936-1.21178705-1.92992661.14574354-5.81211152 2.70213238-4.85537567 3.1452397 1.17652652-2.72446405 7.17199287 1.2164884 7.92186687 4.1137291.7816085 5.7933059-6.75004175 3.2427939-9.19947359-3.6859013-3.53663166-10.73095618-.08109923-9.86472237 4.98231359z"></path>
+                                    </svg>
+                                    <span class="label">Pinterest</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">
+                                    <svg class="svg-icon" width="16" height="16" viewBox="0 0 24 24">
+                                        <path d="M13.8944 10.4695L21.3345 2H19.5716L13.1085 9.35244L7.95022 2H1.99936L9.80147 13.1192L1.99936 22H3.76218L10.5832 14.2338L16.0318 22H21.9827L13.8944 10.4695Z"></path>
+                                    </svg>
+                                    <span class="label">Twitter</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">
+                                    <svg class="svg-icon" width="16" height="16" viewBox="0 0 24 24">
+                                        <path d="m22.4882055 10.2422055c-.0076233-.42186988-.0409932-.95521235-.0993904-1.59959591-.058685-.64467123-.142685-1.22087671-.252-1.72861644-.1249932-.57016438-.3965548-1.05071918-.8143973-1.44137671-.4179863-.39065754-.9042945-.61719863-1.4592123-.67976712-1.7345137-.19518494-4.3554863-.29284932-7.8632055-.29284932-3.50771918 0-6.12883562.09766438-7.86320548.29284932-.55477397.06256849-1.03921233.28910958-1.45317123.67976712-.41410274.3905137-.68365069.87106849-.80864384 1.44137671z"></path>
+                                    </svg>
+                                    <span class="label">YouTube</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Header -->
+        <header class="site-header">
+            <nav>
+                <a href="#">All Recipes</a>
+                <a href="#">Vegan</a>
+                <a href="#">Gluten-Free</a>
+            </nav>
+
+            <div class="title-area">
+                <div class="site-title">
+                    <a href="#">Minimalist Baker</a>
+                </div>
+            </div>
+
+            <nav>
+                <a href="#">About</a>
+                <a href="#">Shop</a>
+                <a href="#">Blogger Resources</a>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main class="container">
+            <!-- Welcome Section -->
+            <section class="welcome-section">
+                <img src="./DELICIOUS-3-Ingredient-Applesauce-No-sugar-added-stovetop-1-pan-20-minutes-SO-satisfying-recipe-minimalistbaker-apples-plantbased-glutenfree-600x900.jpg" class="welcome-image" alt="Delicious Applesauce">
+                <div class="welcome-text">
+                    <div class="welcome-text-inner">
+                        <h2>Welcome, Everyone!</h2>
+                        <p>At Minimalist Baker we share simple recipes that make that require
+                            <span style="font-weight: bold;">10 ingredients or less, 1 bowl, or 30 minutes or less to prepare</span>
+                        </p>
+                        <h3>All eaters are welcome.</h3>
+                        <p>Whether you're new to Minimalist Baker or have been around for a while, we're so glad you're here.</p>
+                        <p>All of our recipes fall into at least one of these three simple categories:</p>
+                    </div>
+                    <strong>
+                        <ul class="recipe-categories">
+                            <li>10 Ingredients or Less</li>
+                            <li>1 Bowl</li>
+                            <li>30 Minutes or Less to Prepare</li>
+                        </ul>
+                    </strong>
+                </div>
+            </section>
+
+            <!-- Subscribe Block -->
+            <div class="subscribe-block">
+                <div class="subscribe-block-inner">
+                    <h4><span>*Want more</span> deliciousness?</h4>
+                    <p class="subscribe__content">
+                        Subscribe here and we'll send you an email as new recipes are published AND our fan favorites ebook!
+                    </p>
+                    <div class="subs-container">
+                        <form class="subs-form">
+                            <div class="subs-field-container">
+                                <input type="email" class="subs-field-medium" placeholder="Email Address..." required>
+                            </div>
+                            <button type="submit" class="subs-submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recipe Key Section -->
+            <div class="recipe-key">
+                <p class="recipe-key__subtitle">Our icon system to help you identify</p>
+                <h3 class="recipe-key__title">Dietary Needs</h3>
+                <div class="recipe-key__items">
+                    <div class="recipe-key__item">
+                        <a href="#" class="recipe-key__circle GF">GF</a>
+                        <a href="#" class="recipe-key__label">Gluten-Free</a>
+                    </div>
+                    <div class="recipe-key__item">
+                        <a href="#" class="recipe-key__circle VG">VG</a>
+                        <a href="#" class="recipe-key__label">Vegan</a>
+                    </div>
+                    <div class="recipe-key__item">
+                        <a href="#" class="recipe-key__circle V">V</a>
+                        <a href="#" class="recipe-key__label">Vegetarian</a>
+                    </div>
+                    <div class="recipe-key__item">
+                        <a href="#" class="recipe-key__circle DF">DF</a>
+                        <a href="#" class="recipe-key__label">Dairy-Free</a>
+                    </div>
+                    <div class="recipe-key__item">
+                        <a href="#" class="recipe-key__circle NS">NS</a>
+                        <a href="#" class="recipe-key__label">Naturally Sweetened</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image Grid Section -->
+            <div class="image-grid">
+                <div class="image-grid__image-container">
+                    <img src="https://minimalistbaker.com/wp-content/uploads/2020/01/AMAZING-Green-Chili-Chicken-Tamales-10-ingredients-BIG-flavor-meal-prep-and-freezer-friendly-recipe-minimalistbaker-tamales-glutenfree_-17.jpg" alt="Green Chili Chicken Tamales">
+                </div>
+                <div class="image-grid__image-container">
+                    <img src="https://minimalistbaker.com/wp-content/uploads/2020/01/PERFECT-Roasted-Potatoes-NO-boiling-FAST-crispy-edges-tender-inside-recipe-minimalistbaker-potatoes-plantbased-glutenfree_-3.jpg" alt="Roasted Potatoes">
+                </div>
+                <div class="image-grid__image-container">
+                    <img src="https://minimalistbaker.com/wp-content/uploads/2020/01/AMAZING-Green-Chili-Chicken-Tamales-10-ingredients-BIG-flavor-meal-prep-and-freezer-friendly-recipe-minimalistbaker-tamales-glutenfree_-35.jpg" alt="Chicken Tamales">
+                </div>
+                <div class="image-grid__image-container">
+                    <img src="https://minimalistbaker.com/wp-content/uploads/2019/12/AMAZING-Dairy-Free-Gluten-Free-Lasagna-Hearty-sauce-EASY-nut-cheese-no-boil-noodles-minimalistbaker-lasagna-glutenfree-dairyfree-recipe-58.jpg" alt="Dairy-Free Lasagna">
+                </div>
+            </div>
+
+                <!-- Cooking Resources Section -->
+            <div class="cooking-resources">
+                <h2 class="cooking-resources__title">
+                    <span>Cooking</span>
+                    <span>Resources</span>
+                </h2>
+                <p class="cooking-resources__description">
+                    Check out our <a href="#">Shop</a> to see what's in our kitchen and pantry. And be sure to check out our fuss-free cooking resources like <a href="#">Juicing Without a Juicer</a>, <a href="#">No-Churn Ice Cream</a>, and <a href="#">Sushi Without a Mat</a>.
+                </p>
+                <div class="button-collection">
+                    <a class="cooking-resources-button-link" href="#">How To Make a Flax Egg</a>
+                    <a class="cooking-resources-button-link" href="#">How To Make Vegan Parmesan Cheese</a>
+                    <a class="cooking-resources-button-link" href="#">DIY Gluten-Free Flour Blend</a>
+                </div>
+            </div>
+
+            <!-- FAQ Bar -->
+            <div class="recipe-faq-bar">
+                <div class="wrap">
+                    <div class="recipe-faq-bar-inner">
+                        <p class="has-large-font-size">
+                            <strong>Have a question about a recipe?</strong> 
+                            check out our <a href="#">Recipe FAQ!</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dive Deeper Section -->
+            <div class="dive-deep">
+                <div class="wrap">
+                    <div class="dive-deep-inner">
+                        <div class="dive-deep-inner__content">
+                            <h2 class="dive-deep__title">Dive Deeper</h2>
+                            <p>If you're hungry for more, check out what else we've created:</p>
+                        </div>
+                        <div class="dive-deep__grid">
+                            <div class="dive-deep__grid-item">
+                                <div class="dive-deep_grid-item-image-container">
+                                    <img src="https://minimalistbaker.com/wp-content/uploads/2020/04/ebook-20-most-loved-high-rated-recipes-200x200.jpg" alt="Fan Favorites Ebook">
+                                </div>
+                                <div class="dive-deep_grid-item-content-container">
+                                    <h3 class="dive-deep_grid-item-title">
+                                        <a href="#">Fan Favorites Ebook</a>
+                                    </h3>
+                                    <p>A FREE 49-page guide with 20 of our most loved, highly rated recipes, including breakfast, entrées, desserts, and more!</p>
+                                </div>
+                            </div>
+                            <div class="dive-deep__grid-item">
+                                <div class="dive-deep_grid-item-image-container">
+                                    <img src="https://minimalistbaker.com/wp-content/uploads/2016/03/Minimalist-Bakers-Everyday-Cooking-Cookbook-200x200.jpg" alt="Cookbook">
+                                </div>
+                                <div class="dive-deep_grid-item-content-container">
+                                    <h3 class="dive-deep_grid-item-title">
+                                        <a href="#">Minimalist Baker's Everyday Cooking</a>
+                                    </h3>
+                                    <p>Our print cookbook with 101 simple, plant-based recipes that've never appeared on the blog!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Final Subscribe Section -->
+            <div class="subscribe-block subscribe-second-instance">
+                <div class="subscribe-block-inner">
+                    <h4><span>*Want more</span> deliciousness?</h4>
+                    <p class="subscribe__content">
+                        Subscribe here and we'll send you an email as new recipes are published AND our fan favorites ebook!
+                    </p>
+                    <div class="subs-container">
+                        <form class="subs-form">
+                            <div class="subs-field-container">
+                                <input type="email" class="subs-field-medium" placeholder="Email Address..." required>
+                            </div>
+                            <button type="submit" class="subs-submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- About Section -->
+            <div class="who">
+                <div class="wrap">
+                    <div class="who-inner">
+                        <div class="who__grid">
+                            <div class="who__grid-item">
+                                <div class="who__grid-item-image-container">
+                                    <img src="https://minimalistbaker.com/wp-content/uploads/2020/01/PERFECT-Roasted-Potatoes-NO-boiling-FAST-crispy-edges-tender-inside-recipe-minimalistbaker-potatoes-plantbased-glutenfree_-6.jpg" alt="Roasted Potatoes">
+                                </div>
+                                <div class="who__grid-item-content">
+                                    <h3 class="who__grid-item-title">No Sponsored <br>Content</h3>
+                                    <p>We feel that it's important to mention we don't accept free products or do sponsored content on Minimalist Baker. This is because we value our readers' trust above all and aim to keep our content pure and honest.</p>
+                                </div>
+                            </div>
+                            <div class="who__grid-item">
+                                <div class="who__grid-item-image-container">
+                                    <img src="./DELICIOUS-3-Ingredient-Applesauce-No-sugar-added-stovetop-1-pan-20-minutes-SO-satisfying-recipe-minimalistbaker-apples-plantbased-glutenfree-600x900.jpg" alt="Applesauce">
+                                </div>
+                                <div class="who__grid-item-content">
+                                    <h3 class="who__grid-item-title">Who is <br>Minimalist <br>Baker?</h3>
+                                    <p>It all started in 2012 with a simple idea to make home cooking more approachable, and has since evolved into something much bigger!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="site-footer">
+                <div class="wrap">
+                    <div class="site-footer-inner">
+                        <div class="footer-top">
+                            <div class="site-footer__socials">
+                                <span>FIND US</span>
+                                <ul class="social-links">
+                                    <li><a href="#"><svg viewBox="0 0 24 24"><path d="m13.6651845 22h-4.44419739v-9.4441974h-2.22098711v-3.6382837h2.22098711v-2.18430414c0-2.96687416 1.25389059-4.73321476 4.81547349-4.73321476h2.9668742v3.63939529h-1.8530458c-1.3872832 0-1.4795464.50911516-1.4795464 1.45731436l-.0055581 1.82080925h3.3592708l-.3935082 3.6382837h-2.9657626z"></path></svg></a></li>
+                                    <li><a href="#"><svg viewBox="0 0 24 24"><path d="m15.9795893 2c3.3197138 0 6.0204107 2.63061431 6.0204107 5.86397331v8.27205339c0 3.2334194-2.7006969 5.8639733-6.0204107 5.8639733h-7.95911661c-3.3197138 0-6.02047269-2.6305539-6.02047269-5.8639733v-8.27205339c0-3.233359 2.70075889-5.86397331 6.02047269-5.86397331z"></path></svg></a></li>
+                                    <li><a href="#"><svg viewBox="0 0 24 24"><path d="m10.7636728 15.2276266c-.5559411 2.7526724-1.23411875 5.3925111-3.24279389 6.7723734-.62058542-4.1619185.91089715-7.2871772 1.62198461-10.6051936-1.21178705-1.92992661.14574354-5.81211152 2.70213238-4.85537567z"></path></svg></a></li>
+                                </ul>
+                            </div>
+                            <div class="site-footer__brandmark">
+                                <img src="https://minimalistbaker.com/wp-content/themes/mb-2020/assets/images/logo.png" alt="MB Logo">
+                            </div>
+                            <div class="site-footer__slogan">
+                                Simple Recipes That<br>Make You Feel Good
+                            </div>
+                        </div>
+                        
+                        <div class="footer-separator"></div>
+                        
+                        <nav class="footer-nav">
+                            <a href="#">Recipes</a>
+                            <a href="#">Cookbook</a>
+                            <a href="#">Shop</a>
+                            <a href="#">About</a>
+                        </nav>
+                        
+                        <div class="footer-links">
+                            <span>©MINIMALISTBAKER.COM</span>
+                            <a href="#">PRIVACY POLICY</a>
+                            <a href="#">TERMS</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Internship Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            background-color: whitesmoke;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+
+        .section-title {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #db7f34;
+        }
+
+        .sub-title {
+            margin-bottom: 20px;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #34495e;
+            font-weight: 500;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        input[type="date"],
+        input[type="file"],
+        input[type="url"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #bdc3c7;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .form-row .sub-title {
+            flex: 1 1 300px;
+        }
+
+        textarea {
+            min-height: 50px;
+            resize: vertical;
+        }
+
+        .checkbox-group {
+            margin-top: 10px;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+
+        button[type="submit"] {
+            background-color: #3498db;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 20px;
+            cursor: pointer;
+            height: fit-content;
+            width: fit-content;
+            display: block;
+            margin: 20px auto;
+        }
+
+        button[type="submit"]:hover {
+            background-color: green;
+        }
+
+        @media (max-width: 768px) {
+
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .form-row .sub-title {
+                flex: 1 1 100%;
+            }
+        }
+
+        .required::after {
+            content: "*";
+            color: #e74c3c;
+            margin-left: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Main-form">
+
+        <h1>
+            Apply for Internship</h1>
+        <form style="margin: 0; width: 800px;" name="Internship-Form" target="_top"></form>
+            <h2 class="section-title">Personal Information</h2>
+
+            <div class="sub-title">
+                <label class="required" for="First Name">First Name:</label>
+                <input required id="firstName" type="text" name="firstName" placeholder="Enter First Name here">
+
+                <label class="required" for="Last Name">Last Name:</label>
+                <input required id="lastName" type="text" name="lastName" placeholder="Enter Last Name here">
+
+            </div>
+            <div class="sub-title">
+                <label class="required" for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Please enter a valid phone number"
+                    required>
+            </div>
+            <div class="sub-title">
+                <label class="required" for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter Email here" required>
+            </div>
+            <div class="sub-title">
+                <label class="required" for="address">Street Address</label>
+                <input type="text" id="address" name="address" placeholder="Enter Address here" required>
+            </div>
+            <div class="sub-title">
+                <label class="required" for="city">City</label>
+                <input type="text" id="city" name="city" placeholder="Enter City here" required>
+            </div>
+            <div class="sub-title">
+                <label class="required" for="state">State</label>
+                <input type="text" id="state" name="state" placeholder="Enter State here" required>
+            </div>
+            <div class="sub-title">
+                <label class="required" for="zip">ZIP Code</label>
+                <input type="text" id="zip" name="zip" placeholder="Please enter ZIP code"
+                    required>
+            </div>
+
+            <h2 class="section-title">Educational Background</h2>
+            <div class="sub-title">
+                <label class="required" for="academicStatus">Current Academic Status</label>
+                <select id="academicStatus" name="academicStatus" required>
+                    <option value="">Select your status</option>
+                    <option value="highSchool">High School</option>
+                    <option value="undergraduate">Undergraduate</option>
+                    <option value="graduate">Graduate</option>
+                </select>
+            </div>
+            <div class="sub-title">
+                <label class="required" for="university">Name of School/University</label>
+                <input type="text" id="university" name="university" required>
+            </div>
+            <div class="form-row">
+                <div class="sub-title">
+                    <label class="required" for="major">Major/Field of Study</label>
+                    <input type="text" id="major" name="major" required>
+                </div>
+                <div class="sub-title">
+                    <label class="required" for="graduationYear">Expected Graduation Year</label>
+                    <input type="number" id="graduationYear" name="graduationYear" required>
+                </div>
+            </div>
+
+            <h2 class="section-title">Internship Preferences</h2>
+            <div class="sub-title">
+                <label class="required" for="position">Desired Internship Position</label>
+                <input type="text" id="position" name="position" required>
+            </div>
+            <div class="form-row">
+                <div class="sub-title">
+                    <label class="required" for="duration">Preferred Duration</label>
+                    <select id="duration" name="duration" required>
+                        <option value="">Select duration</option>
+                        <option value="1">1 month</option>
+                        <option value="3">3 months</option>
+                        <option value="6">6 months</option>
+                    </select>
+                </div>
+                <div class="sub-title">
+                    <label class="required" for="startDate">Available Start Date</label>
+                    <input type="date" id="startDate" name="startDate" required>
+                </div>
+            </div>
+            <div class="sub-title">
+                <label class="required" for="workMode">Preferred Work Mode</label>
+                <select id="workMode" name="workMode" required>
+                    <option value="">Select work mode</option>
+                    <option value="remote">Remote</option>
+                    <option value="onsite">On Site</option>
+                    <option value="hybrid">Hybrid</option>
+                </select>
+            </div>
+            <h2 class="section-title">Work Experience</h2>
+            <div class="sub-title">
+                <label for="previousTitle">Previous Internship/Job Title</label>
+                <input type="text" id="previousTitle" name="previousTitle">
+            </div>
+            <div class="sub-title">
+                <label for="company">Company Name</label>
+                <input type="text" id="company" name="company">
+            </div>
+            <div class="sub-title">
+                <label for="startEmployment">Start Date</label>
+                <input type="date" id="startEmployment" name="startEmployment">
+
+                <label for="endEmployment">End Date</label>
+                <input type="date" id="endEmployment" name="endEmployment">
+            </div>
+            <div class="sub-title">
+                <label for="responsibilities">Responsibilities and Skills Learned</label>
+                <textarea id="responsibilities" name="responsibilities"></textarea>
+            </div>
+   
+
+    <h2 class="section-title">Additional Qualifications</h2>
+    <div class="sub-title">
+        <label for="programming_languages">Programming Languages</label>
+        <select id="programming_languages" name="programming_languages" required>
+            <option value="">Select a Language</option>
+            <option value="python">Python</option>
+            <option value="javascript">JavaScript</option>
+            <option value="java">Java</option>
+            <option value="c++">C++</option>
+            <option value="ruby">Ruby</option>
+        </select>
+    </div>
+
+    <div class="sub-title">
+        <label for="Software Developement">Software Development Framework</label>
+        <select id="softwaredevelopment" name="softwaredevelopment" required>
+            <option value="">Select Framework</option>
+            <option value="React">React</option>
+            <option value="Nextjs">Next js</option>
+            <option value="Django">Django</option>
+        </select>
+    </div>
+
+    <div class="sub-title">
+        <label for="DataScienceTools">Data Science Tools</label>
+        <select id="DataScienceTools" name="DataScienceTools" required>
+            <option value="">Select a Tool</option>
+            <option value="pyTorch">Tensorflow</option>
+            <option value="pyTorch">Apace Spark</option>
+            <option value="pyTorch">pyTorch</option>
+           
+        </select>
+    </div>
+
+    <div class="sub-title">
+        <label for="extra_skills">Other Relevant Skills</label>
+        <textarea id="extra_skills" name="extra_skills" placeholder="Enter additional skills here"
+            rows="3"></textarea>
+    </div>
+
+    <div class="sub-title">
+        <label for="certifications">List Certifications or Courses</label>
+        <textarea id="certifications" name="certifications"
+            placeholder="Enter your certifications" rows="3"></textarea>
+    </div>
+   
+    <h2 class="section-title">Documents Upload</h2>
+    <div class="sub-title">
+        <label class="required" for="resume">Resume</label>
+        <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+    </div>
+    <div class="sub-title">
+        <label for="coverLetter">Cover Letter</label>
+        <input type="file" id="coverLetter" name="coverLetter" accept=".pdf,.doc,.docx" required>
+<label for="CV">OR</label>
+        <textarea id="coverLetter" name="coverLetter" placeholder="Cover Letter"></textarea>
+    </div>
+    <div class="sub-title">
+        <label for="portfolioFile">Portfolio</label>
+        <input type="file" id="portfolioFile" name="portfolioFile" accept=".pdf,.doc,.docx,.zip">
+
+        <label for="portfolioLink">OR Link for Portfolio</label>
+        <input type="url" id="portfolioLink" name="portfolioLink" placeholder="https://your-portfolio-url.com">
+    </div>
+
+        <h2 class="section-title">References(Optional)</h2>
+        <div class="sub-title">
+            <label for="referenceName">Reference Name</label>
+            <input type="text" id="referenceName" name="referenceName">
+        </div>
+        <div class="sub-title">
+            <label for="referenceContact">Reference Contact Information</label>
+            <input type="text" id="referenceContact" name="referenceContact">
+        </div>
+        <div class="sub-title">
+            <label for="relationship">Relationship to Applicant</label>
+            <input type="text" id="relationship" name="relationship">
+        </div>
+   
+        <h2 class="section-title">Additional Questions</h2>
+        <div class="sub-title">
+            <label for="whyCompany">Why do you want internship at this company?</label>
+            <textarea id="whyCompany" name="whyCompany"></textarea>
+        </div>
+        <div class="sub-title">
+            <label for="careerGoals">What are your career goals after completing the
+                internship?</label>
+            <textarea id="careerGoals" name="careerGoals"></textarea>
+        </div>
+   
+        <h2 class="section-title">Consent and Agreement</h2>
+        <div class="checkbox-group">
+            <label class="checkbox-label">
+                <input type="checkbox" id="terms" name="terms" required>
+                I agree to the terms and conditions
+            </label>
+        </div>
+        <div class="checkbox-group">
+            <label class="checkbox-label">
+                <input type="checkbox" id="privacy" name="privacy" required>
+                I acknowledge the privacy policy
+            </label>
+        </div>
+   
+    <button type="submit">Submit Application</button>
+
+    </form>
+    </div>
+</body>
+
+</html>
